@@ -1,14 +1,14 @@
 import { copyFileSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
 
-const dist = join(process.cwd(), 'dist')
-const index = join(dist, 'index.html')
-const notFound = join(dist, '404.html')
+const outDir = join(process.cwd(), 'docs')
+const index = join(outDir, 'index.html')
+const notFound = join(outDir, '404.html')
 
 if (!existsSync(index)) {
-  console.error('copy-404: dist/index.html missing — run vite build first')
+  console.error('copy-404: docs/index.html missing — run vite build first')
   process.exit(1)
 }
 
 copyFileSync(index, notFound)
-console.log('copy-404: wrote dist/404.html (SPA fallback for GitHub Pages)')
+console.log('copy-404: wrote docs/404.html (SPA fallback for GitHub Pages)')
