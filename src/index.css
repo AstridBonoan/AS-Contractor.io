@@ -1,0 +1,23 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --color-navy-950: #050b14;
+  --color-navy-900: #0a1628;
+  --color-navy-800: #132337;
+  --color-navy-700: #1c3149;
+  --color-brand-orange: #f97316;
+  --color-brand-orange-dark: #ea580c;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-slate-900 antialiased font-sans;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-orange;
+  }
+}
